@@ -1,1 +1,311 @@
-Hello there!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bach Software - Composing Software Excellence</title>
+    <meta name="description" content="Bach Software delivers premium SaaS solutions with expertise and trust.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #2c1810 0%, #1a1a1a 50%, #2d2420 100%);
+            min-height: 100vh;
+            color: #e8e6e3;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(101, 67, 33, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            color: #b8b5b0;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 600px;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #9a9690;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 650px;
+        }
+
+        .contact-section {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            transition: all 0.1s ease;
+            text-decoration: none;
+            color: #e8e6e3;
+            font-weight: 400;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            fill: #d4af37;
+            flex-shrink: 0;
+        }
+
+        /* Decorative elements */
+        .decoration {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.3;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                padding: 50px 60px;
+            }
+
+            .contact-section {
+                top: 40px;
+                right: 40px;
+            }
+
+            .footer {
+                left: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                min-height: auto;
+                padding: 60px 30px 20px 30px;
+                align-items: center;
+                text-align: center;
+                justify-content: flex-start;
+            }
+
+            .hero-section {
+                margin-bottom: 30px;
+            }
+
+            .logo {
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                font-size: 1rem;
+                margin-bottom: 0;
+                max-width: 100%;
+            }
+
+            .contact-section {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 30px;
+                align-self: center;
+            }
+
+            .contact-info {
+                align-items: center;
+            }
+
+            .footer {
+                display: none;
+            }
+
+            .decoration {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 50px 20px 15px 20px;
+            }
+
+            .logo {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .contact-section {
+                margin-top: 25px;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="hero-section">
+            <h1 class="logo">Bach Software</h1>
+            <p class="tagline">Composing Software Excellence</p>
+
+            <p class="description">
+                We deliver sophisticated software-as-a-service solutions built with expertise,
+                precision, and a commitment to excellence. Our focus is on creating robust,
+                scalable applications that drive business success.
+            </p>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-info">
+            <a href="mailto:info@bachsoftware.nl" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                info@bachsoftware.nl
+            </a>
+
+            <a href="https://github.com/bachsoftware-nl" class="contact-item" target="_blank" rel="noopener">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="decoration"></div>
+</body>
+</html>
